@@ -1,12 +1,13 @@
-echo "Welcome to Employee"
-#!/bin/bash -x
+#! /bin/bash -x
 
-echo "Employee Wage Compuation Problem"
 isPresent=1
 randomCheck=$(( RANDOM%2 ))
-if [[ $randomCheck -eq $isPresent ]]
+if [[ $randomCheck -eq $isPresent ]];
 then
-    echo "Employee is present"
+	empRatePerHr=20
+	empHrs=8
+	salary=$(($empRatePerHr*$empHrs))
 else
-     echo "Employee is not present"
+	salary=0
 fi
+
