@@ -2,20 +2,25 @@
 
 isFullTime=1
 isPartTime=2
-empWagePrHr=20
-randomcheck=$(( RANDOM%3 ))
+empWagePrHrs=20
+empCheck=$(( RANDOM%3 ))
 
-if [[ $randomcheck -eq $isFullTime ]];
-then
-	empHr=8
-elif [[ $randomcheck -eq $isPartTime ]]
-then
-	empHr=4
-else
-        empHr=0
-fi
+case $empCheck in
+	$isFullTime)
+		empHrs=8
+		;;
+	$isPartTime)
+		empHrs=4
+		;;
+	*)
+        	empHrs=0
+		;;
+esac
+salary=$(($empWagePrHrs*$empHrs ))
 
-salary=$(($empWagePrHr*$empHr ))
+
+
+
 
 
 
